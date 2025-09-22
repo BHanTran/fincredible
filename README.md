@@ -62,14 +62,6 @@ A modern, full-stack expense tracking application built with Next.js 15, Supabas
    - `profiles` table
    - RLS disabled for prototype simplicity
 
-4. **Run the application**
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
 ## Usage
 
 ### Getting Started
