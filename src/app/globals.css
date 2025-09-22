@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Light theme — mauve/plum palette */
+  --background: 305 30% 96%;
+  --foreground: 307 28% 18%;
+  --primary: 313 22% 48%; /* ~#9F6496 */
+  --primary-foreground: 0 0% 98%;
+  --secondary: 316 24% 90%; /* light mauve */
+  --secondary-foreground: 307 28% 18%;
+  --muted: 316 24% 94%;
+  --muted-foreground: 313 18% 40%;
+  --accent: 318 28% 75%; /* ~#D391B0 */
+  --accent-foreground: 307 28% 18%;
+  --destructive: 350 70% 50%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 312 24% 82%;
+  --input: 312 24% 90%;
+  --ring: 313 22% 48%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme — deeper plum */
+    --background: 292 38% 9%; /* ~#0C0420 */
+    --foreground: 320 20% 92%;
+    --primary: 313 22% 48%;
+    --primary-foreground: 292 38% 9%;
+    --secondary: 306 20% 18%;
+    --secondary-foreground: 320 20% 92%;
+    --muted: 306 20% 18%;
+    --muted-foreground: 310 15% 70%;
+    --accent: 325 30% 55%;
+    --accent-foreground: 320 20% 92%;
+    --destructive: 350 72% 56%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 305 20% 26%;
+    --input: 306 20% 18%;
+    --ring: 313 22% 48%;
+  }
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+/* Beautiful salmon ombre gradient background */
+.app-gradient {
+  /* Soft mauve background similar to the reference image */
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(211,145,176,0.25), transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(155,100,150,0.20), transparent 60%),
+    linear-gradient(135deg, #E9D3E2 0%, #CFA9C4 40%, #B683AE 100%);
+}
