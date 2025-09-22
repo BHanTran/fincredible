@@ -1,6 +1,6 @@
-# Expense Tracker
+# Fincredible
 
-A modern, full-stack expense tracking application built with Next.js 15, Supabase, Clerk authentication, and AI-powered receipt parsing using Google's Gemini AI.
+A modern, full-stack reimbursement tracking application built with Next.js 15, Supabase, Clerk authentication, and AI-powered receipt parsing using Google's Gemini AI.
 
 ## Features
 
