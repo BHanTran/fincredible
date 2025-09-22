@@ -1,10 +1,10 @@
 # Expense Tracker
 
-A modern, full-stack expense tracking application built with Next.js 15, Supabase,  authentication, and AI-powered receipt parsing using Google's Gemini AI.
+A modern, full-stack expense tracking application built with Next.js 15, Supabase, Clerk authentication, and AI-powered receipt parsing using Google's Gemini AI.
 
 ## Features
 
-- 🔐 **Authentication**: Secure login with  (email + Google OAuth)
+- 🔐 **Authentication**: Secure login with Clerk (email + Google OAuth)
 - 📊 **Dashboard**: Comprehensive expense overview with statistics
 - 💰 **Expense Management**: Add, edit, delete expenses with categories
 - 🤖 **AI Receipt Parsing**: Upload receipt images for automatic data extraction
@@ -16,7 +16,7 @@ A modern, full-stack expense tracking application built with Next.js 15, Supabas
 
 - **Frontend**: Next.js 15 with TypeScript and App Router
 - **Database**: Supabase (PostgreSQL)
-- **Authentication**: 
+- **Authentication**: Clerk
 - **Styling**: Tailwind CSS
 - **AI**: Google Gemini AI for receipt parsing
 - **Icons**: Lucide React
@@ -28,35 +28,36 @@ A modern, full-stack expense tracking application built with Next.js 15, Supabas
 
 - Node.js 18+ and npm
 - Supabase account
--  account  
+- Clerk account
 - Google AI API key (for Gemini)
 
 ### Installation
 
 1. **Clone and install dependencies**
    ```bash
-   cd expense-tracker-week3
+   git clone https://github.com/yourusername/fincredible.git
+   cd fincredible
    npm install
    ```
 
 2. **Environment Setup**
-   Update `.env.local` with your actual Gemini API key:
+   Create a `.env.local` file with your credentials:
    ```env
-   #  Authentication (already configured)
-   NEXT_PUBLIC__PUBLISHABLE_KEY=pk_test_cHJvbXB0LWVsZi03NS5jbGVyay5hY2NvdW50cy5kZXYk
-   _SECRET_KEY=sk_test_LMckDjnjY0aeaiYpcAuULaTnezxZrmVmJ0l1Ff9dBY
-   
-   # Supabase (already configured)
-   NEXT_PUBLIC_SUPABASE_URL=https://pxaeqwymrrygfnlmhbbu.supabase.co
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4YWVxd3ltcnJ5Z2ZubG1oYmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTUwNjU2MTQsImV4cCI6MjA3MDY0MTYxNH0.Z7JGzC7IymSPY2OKLkSVgL7RNVtmMai3cGslFVk0WV0
-   
-   # Gemini AI - UPDATE THIS WITH YOUR ACTUAL KEY
-   GEMINI_API_KEY=your_actual_gemini_api_key_here
+   # Clerk Authentication
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+   CLERK_SECRET_KEY=your_clerk_secret_key
+
+   # Supabase
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+   # Gemini AI
+   GEMINI_API_KEY=your_gemini_api_key
    ```
 
 3. **Database Setup**
    The database schema is already configured in your Supabase project with:
-   - `expenses` table (with receipt fields added, user_id as TEXT for  compatibility)
+   - `expenses` table (with receipt fields added, user_id as TEXT for Clerk compatibility)
    - `categories` table (with default categories pre-loaded, user_id as TEXT)
    - `profiles` table
    - RLS disabled for prototype simplicity
@@ -99,7 +100,7 @@ src/
 ├── app/                    # Next.js 15 App Router
 │   ├── api/               # API routes
 │   ├── expenses/          # Expense pages
-│   ├── layout.tsx         # Root layout with 
+│   ├── layout.tsx         # Root layout with Clerk
 │   └── page.tsx           # Dashboard
 ├── components/            # React components
 │   ├── dashboard-stats.tsx
@@ -170,7 +171,7 @@ Upload receipt images and the Gemini AI automatically extracts:
 ### Security
 - Row Level Security (RLS) enabled
 - User isolation at database level
-- Secure authentication with 
+- Secure authentication with Clerk
 - Protected API routes
 
 ## Contributing
